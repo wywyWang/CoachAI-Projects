@@ -1,0 +1,8 @@
+set1.csv
+*.pyc
+match_data.csv
+match_data_1.csv
+init_speed_and_angle.xlsx
+ball_distribution.xlsx
+*.png
+match/

@@ -1,0 +1,87 @@
+.navbar{
+    margin-bottom: 0.5em;
+}
+
+.modal-header h4 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container .subtitle{
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#dropdown select{
+    margin-right: 10px;
+    margin-left: 3px;
+}
+
+#total_court .subtitle{
+    margin-bottom: 30px;
+}
+
+.form-group{
+    margin-left: 50px;
+}
+
+.form-group input{
+    width: 100px;
+}
+
+#line{
+    margin-top: 30px;
+}
+
+#line_chart{
+    margin:0px auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+svg {
+    background-color: white;
+    padding-left: 30px;
+}
+
+path {
+    fill: none;
+    stroke-width: 2;
+}
+
+.axis path, .axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: black;
+    stroke-width: 1;
+}
+
+.axis text {
+    fill: #766;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
+}
+
+.gridaxis path, .gridaxis line {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #dddddd;
+    stroke-width: 1;
+}
+
+.d3_legend{
+    font-size: 1.2em;
+}
+
+.modal-text{
+    font-size: 1.3em;
+    text-align: right;
+    font-weight: bold;
+}
+
+option {
+    font-size: 16px;
+}

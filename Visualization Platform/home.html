@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="image/badminton.ico"/>
+    <link rel="bookmark" href="image/badminton.ico"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>CoachAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="navbar">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./home.html">CoachAI</a>
+                </div>
+                <ul class="nav navbar-nav">
+                <li class="active"><a href="./home.html">Home</a></li>
+                <li><a href="./realdata.html">Real Data</a></li>
+                <li><a href="./ourdata.html">Our Data</a></li>
+                <li><a href="./trajectory.html">Trajectory</a></li>
+                <li><a href="./autoanalysis.html">Auto Analysis</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <article class="markdown-body">
+            <h1 id="tracknet-a-deep-learning-network-for-tracking-high-speed-and-tiny-objects-in-sport-applications">TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sport Applications</h1>
+        <h4 id="tsì-uí-i̇k-wen-chih-peng"><a href="https://people.cs.nctu.edu.tw/~yi/" target="_blank">Tsì-Uí İk</a>, <a href="https://sites.google.com/site/wcpeng/" target="_blank">Wen-Chih Peng</a></h4>
+        <hr class="split-line" />
+        <h2 id="abstract">Abstract</h2>
+        <div align="justify">
+        Ball trajectory data are one of the most fundamental and useful information in the evaluation of players' performance and analysis of game strategies. Although vision-based object tracking techniques have been developed to analyze sport competition videos, it is still challenging to recognize and position a high-speed and tiny ball accurately. In this work, we develop a deep learning network, called TrackNet, to track the badminton from broadcast videos in which the ball images are small, blurry, and sometimes with afterimage tracks or even invisible. The proposed heatmap-based deep learning network is trained to not only recognize the ball image from a single frame but also learn flying patterns from consecutive frames. TrackNet takes images with the size of 640x360 to generate a detection heatmap from several consecutive frames to position the ball and achieve high precision even on public domain videos. The network is evaluated on the video of <a href="https://www.youtube.com/watch?v=__oUhNyM-Jc" target="_blank">2018 Indonesia Open Final - TAI Tzu Ying vs CHEN YuFei</a>. The precision, recall, and F1-measure of TrackNet reach 85.0%, 57.7%, and 68.7%, respectively.
+        </div>
+        <hr class="split-line" />
+
+        <h2 id="publication">Publication</h2>
+        <p>Y.-C. Huang, I.-N. Liao, C.-H. Chen, T.-U. Ik, W.-C. Peng, “TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sport Applications”, <em>Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining KDD ‘19 (Submitted)</em></p>
+        <hr class="split-line" />
+
+        <h2 id="dataset">Dataset</h2>
+        <div align="justify">
+        Our dataset comes from a video of the badminton competition of <a href="#" target="_blank">Badminton competition</a>. The resolution is 1280x720 and the frame rate is 30 fps. Unrelated frames such as commercial or highlight replays are screened out. The resulting total number of frames is 18,242. We label each frame with the following attributes: "Frame Name", "Visibility Class", "X", and "Y". Table 1 shows a part of the badminton label file.
+        </div>
+        
+        <h4 id="table-1-a-part-of-the-badminton-label-file">Table 1: A part of the badminton label file</h4>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th style="text-align: center">Frame Name</th>
+                    <th style="text-align: center">Visibility Class</th>
+                    <th style="text-align: center">X</th>
+                    <th style="text-align: center">Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td style="text-align: center">…</td>
+                    <td style="text-align: center">…</td>
+                    <td style="text-align: center">…</td>
+                    <td style="text-align: center">…</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align: center">9</td>
+                    <td style="text-align: center">1</td>
+                    <td style="text-align: center">693</td>
+                    <td style="text-align: center">420</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align: center">10</td>
+                    <td style="text-align: center">1</td>
+                    <td style="text-align: center">692</td>
+                    <td style="text-align: center">430</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align: center">11</td>
+                    <td style="text-align: center">0</td>
+                    <td style="text-align: center">0</td>
+                    <td style="text-align: center">0</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align: center">12</td>
+                    <td style="text-align: center">1</td>
+                    <td style="text-align: center">701</td>
+                    <td style="text-align: center">335</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align: center">…</td>
+                    <td style="text-align: center">…</td>
+                    <td style="text-align: center">…</td>
+                    <td style="text-align: center">…</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="image/badminton.ico"/>
+    <link rel="bookmark" href="image/badminton.ico"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>CoachAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <link rel="stylesheet"  href="css/text.css">
+    <script src="js/trajectory.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./home.html">CoachAI</a>
+                </div>
+                <ul class="nav navbar-nav">
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./realdata.html">Real Data</a></li>
+                <li><a href="./ourdata.html">Our Data</a></li>
+                <li class="active"><a href="./trajectory.html">Trajectory</a></li>
+                <li><a href="./autoanalysis.html">Auto Analysis</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="dropdown" class="row form-group form-inline">
+        <label for="game">Game:</label>
+        <select id="game" class="form-control" onchange=change_game()>
+            <script type="text/javascript">get_interval_game();</script>
+        </select>
+        <label for="set">Set:</label>
+        <select id="set" class="form-control" onchange=change_set()>
+            <script type="text/javascript">get_interval_set();</script>
+        </select>
+        <label for="rally">Rally:</label>
+        <select id="rally" class="form-control">
+            <script type="text/javascript">get_interval_rally();</script>
+        </select>
+    </div>
+
+    <div class="ball_trajectory">
+        <script type="text/javascript">init_trajectory();</script>
+    </div>
+</body>
+</html>

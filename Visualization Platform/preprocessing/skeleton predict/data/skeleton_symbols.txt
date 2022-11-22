@@ -1,0 +1,20 @@
+index: The frame number of this rally
+x: The x-axis of the top-left corner of bbox
+y: The y-axis of the top-left corner of bbox
+w: The width of bbox
+h: The height of bbox
+x1,y1: The coordinate of the top of the head
+x2,y2: The coordinate of the neck
+x3,y3: The coordinate of the right-shoulder
+x4,y4: The coordinate of the right-elbow
+x5,y5: The coordinate of the right-wrist
+x6,y6 The coordinate of the left-shoulder
+x7,y7 The coordinate of the left-elbow
+x8,y8 The coordinate of the left-wrist
+x9,y9 The coordinate of the right-hip
+x10,y10 The coordinate of the right-knee
+x11,y11 The coordinate of the right-ankle
+x12,y12 The coordinate of the left-hip
+x13,y13 The coordinate of the left-knee
+x14,y14 The coordinate of the left-ankle
+x15,y15 The coordinate of the center of the upper body

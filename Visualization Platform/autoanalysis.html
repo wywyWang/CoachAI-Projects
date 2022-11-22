@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="image/badminton.ico"/>
+    <link rel="bookmark" href="image/badminton.ico"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>CoachAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/autoanalysis.css">
+    <script src="js/autoanalysis.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./home.html">CoachAI</a>
+                </div>
+                <ul class="nav navbar-nav">
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./realdata.html">Real Data</a></li>
+                <li><a href="./ourdata.html">Our Data</a></li>
+                <li><a href="./trajectory.html">Trajectory</a></li>
+                <li class="active"><a href="./autoanalysis.html">Auto Analysis</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form id="submit-video" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="video-uploader">Please upload .mp4 file：</label>
+                    <input type="file" class="form-control" id="video-uploader" name="video-uploader" accept=".mp4" onchange="checkfile(this);"/>
+                </div>
+                <button type="submit" class="btn btn-default">Upload Video</button>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="file-size"></div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                    0%
+                </div>
+            </div>
+            <div class="upload-finish"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row btn-group module-btn">
+            <button class="btn btn-default" id="tracknet_btn" type="button" data-toggle="modal" data-target="#file_select">Tracknet</button>
+            <button class="btn btn-default" id="segmentation_btn" type="button" data-toggle="modal" data-target="#file_select">Segmentation</button>
+            <button class="btn btn-default" id="predict_ball_type_btn" type="button" data-toggle="modal" data-target="#file_select">Predict Ball Type</button>
+            <button class="btn btn-default" id="one_click_to_complete_btn" type="button" data-toggle="modal" data-target="#file_select">One click to complete</button>
+        </div>
+        <div class="row analysis-result"></div>
+    </div>
+    
+    <div class="container">
+        <div class="modal" id="file_select" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button id="close_file_select" type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="file_select_title">Select video list</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer waiting">
+                        <h3 class="modal-title">Analyzing ...</h3>
+                        <div class="waiting-content"></div>
+                    	<img src="./image/waiting.gif">
+                    </div>
+                    <script type="text/javascript">show_file_select();</script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
