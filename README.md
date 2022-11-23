@@ -11,8 +11,8 @@ The high-level concepts of each project are as follows:
 5. [Movement Forecasting](https://github.com/wywyWang/CoachAI-Projects/tree/main/Movement%20Forecasting) published at *AAAI-23* proposes the first movement forecasting task, which contains not only the goal of stroke forecasting but also the movement of players, by DyMF, a novel dynamic graphs and hierarchical fusion model based on the proposed player movements (PM) graphs.
 
 ## Publications and Contributions
-1. [Kai-Shiang Chang, Wei-Yao Wang, Wen-Chih Peng, "Where Will Players Move Next? Dynamic Graphs and Hierarchical Fusion for Movement Forecasting in Badminton", AAAI 2023]()
-2. [Li-Chun Huang, Nai-Zen Hseuh, Yen-Che Chien, Wei-Yao Wang, Kuang-Da Wang, Wen-Chih Peng, "A Reinforcement Learning Badminton Environment for Simulating Player Tactics (Student Abstract), AAAI 2023]()
+1. [Kai-Shiang Chang, Wei-Yao Wang, Wen-Chih Peng, "Where Will Players Move Next? Dynamic Graphs and Hierarchical Fusion for Movement Forecasting in Badminton", AAAI 2023](https://arxiv.org/abs/2211.12217)
+2. [Li-Chun Huang, Nai-Zen Hseuh, Yen-Che Chien, Wei-Yao Wang, Kuang-Da Wang, Wen-Chih Peng, "A Reinforcement Learning Badminton Environment for Simulating Player Tactics (Student Abstract), AAAI 2023](https://arxiv.org/abs/2211.12234)
 3. [Wei-Yao Wang, "Modeling Turn-Based Sequences for Player Tactic Applications in Badminton Matches", CIKM 2022](https://dl.acm.org/doi/abs/10.1145/3511808.3557820)
 4. [Wei-Yao Wang, Teng-Fong Chan, Wen-Chih Peng, Hui-Kuo Yang, Chih-Chuan Wang, Yao-Chung Fan, "How Is the Stroke? Inferring Shot Influence in Badminton Matches via Long Short-term Dependencies", ACM TIST 2022](https://dl.acm.org/doi/full/10.1145/3551391)
 5. [Wei-Yao Wang, Hong-Han Shuai, Kai-Shiang Chang, Wen-Chih Peng, "ShuttleNet: Position-aware Fusion of Rally Progress and Player Styles for Stroke Forecasting in Badminton", AAAI 2022](https://ojs.aaai.org/index.php/AAAI/article/view/20341)
