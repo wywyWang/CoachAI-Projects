@@ -1,7 +1,8 @@
 # RL-environment
 
 ## Introduction
-This is a code of the paper ***A Reinforcement Learning Badminton Environment for Simulating Player Tactics (Student Abstract)***. We aim to build a reinforcement learning environment that enable users to train, test agents and reproduce the match in a badminton game.
+This is a code of the paper **A Reinforcement Learning Badminton Environment for Simulating Player Tactics (Student Abstract)**. We aim to build a reinforcement learning environment that enable users to train, test agents and reproduce the match in a badminton game. Paper: https://arxiv.org/abs/2211.12234.
+
 ## Environment
 The project is built with **Python 3.10** on **Visual Studio Code** on **Windows 10**.
 You can directly download the project and run it on **Visual Studio Code** or you can download the code and include the following dependencies on your own environment.
