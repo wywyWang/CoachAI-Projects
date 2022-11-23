@@ -1,6 +1,6 @@
 # Where Will Players Move Next? Dynamic Graphs and Hierarchical Fusion for Movement Forecasting in Badminton (AAAI 2023)
 
-Official code of the paper Where Will Players Move Next? Dynamic Graphs and Hierarchical Fusion for Movement Forecasting in Badminton. Paper will be released soon.
+Official code of the paper Where Will Players Move Next? Dynamic Graphs and Hierarchical Fusion for Movement Forecasting in Badminton. Paper: https://arxiv.org/abs/2211.12217.
 
 ## Overview
 Sports analytics has captured increasing attention since analysis of the various data enables insights for training strategies, player evaluation, etc.
