@@ -103,6 +103,10 @@ def get_argument():
                         type=int,
                         default=10,
                         help="Number of samples for evaluation")
+    opt.add_argument("--gpu_num",
+                        type=int,
+                        default=0,
+                        help="Selected GPU number")
     config = vars(opt.parse_args())
     return config
 
@@ -121,7 +125,7 @@ set_seed(config['seed_value'])
 # Clean data and Prepare dataset
 matches, total_train, total_val, total_test, config = prepare_dataset(config)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device(f"cuda:{config['gpu_num']}" if torch.cuda.is_available() else "cpu")
 
 print("Model path: {}".format(config['output_folder_name']))
 

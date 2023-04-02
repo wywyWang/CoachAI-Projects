@@ -36,7 +36,7 @@ set_seed(config['seed_value'])
 # Prepare Dataset
 matches, total_train, total_val, total_test, config = prepare_dataset(config)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device(f"cuda:{config['gpu_num']}" if torch.cuda.is_available() else "cpu")
 
 criterion = {
     'entropy': nn.CrossEntropyLoss(ignore_index=0, reduction='sum'),
@@ -105,7 +105,7 @@ for train_dataloader, test_dataloader in zip(total_train, total_test):
     current_model_path = model_path + str(k_fold_index) + '/'
     encoder_path = current_model_path + 'encoder'
     decoder_path = current_model_path + 'decoder'
-    encoder.load_state_dict(torch.load(encoder_path)), decoder.load_state_dict(torch.load(decoder_path))
+    encoder.load_state_dict(torch.load(encoder_path, map_location=device)), decoder.load_state_dict(torch.load(decoder_path, map_location=device))
 
     total_params = sum(p.numel() for p in encoder.parameters() if p.requires_grad) + sum(p.numel() for p in decoder.parameters() if p.requires_grad)
     print("Model params: {}".format(total_params))

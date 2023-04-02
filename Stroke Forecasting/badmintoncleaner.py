@@ -6,13 +6,12 @@ import numpy as np
 import ast
 import os
 import re
-from sklearn.model_selection import KFold
 
 
 class BadmintonCleaner:
     def __init__(self, directory, match_list):
         available_matches = pd.read_csv(directory + match_list)
-        self.homography_matrix = pd.read_csv(directory + 'homography_new.csv', converters={'homography_matrix':lambda x: np.array(ast.literal_eval(x))})
+        self.homography_matrix = pd.read_csv(directory + 'homography.csv', converters={'homography_matrix':lambda x: np.array(ast.literal_eval(x))})
         all_matches = self.read_match(directory, available_matches)
         cleaned_matches = self.engineer_match(all_matches)
         cleaned_matches.to_csv('data/dataset.csv', index=False)
@@ -197,25 +196,5 @@ def prepare_dataset(config):
     print("Filtering:", len(train_dataset), len(test_dataset))
 
     total_train.append(train_dataloader), total_test.append(test_dataloader)
-
-    # # k-fold
-    # total_train, total_val, total_test = [], [], []
-    # kf = KFold(n_splits=config['K'], shuffle=True, random_state=config['seed_value'])
-    # for train_fold_indexes, test_indexes in kf.split(train_indexes):
-    #     train_group = group[group.index.isin(train_fold_indexes)]
-    #     test_group = group[group.index.isin(test_indexes)]
-
-    #     # print("Original: ", len(train_group), len(test_group))
-
-    #     train_dataset = BadmintonDataset(train_group, config['encode_length'], max_ball_round=config['max_ball_round'])
-    #     train_dataloader = DataLoader(train_dataset, batch_size=config['batch_size'], shuffle=True, num_workers=8)
-
-    #     test_dataset = BadmintonDataset(test_group, config['encode_length'], max_ball_round=config['max_ball_round'])
-    #     test_dataloader = DataLoader(test_dataset, batch_size=config['batch_size'], shuffle=False, num_workers=8)
-    
-    #     # print("Filtering:", len(train_dataset), len(test_dataset))
-
-    #     total_train.append(train_dataloader)
-    #     total_test.append(test_dataloader)
 
     return matches, total_train, total_val, total_test, config
