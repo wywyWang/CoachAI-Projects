@@ -118,20 +118,6 @@ def shotGen_trainer(k_fold_index, data_loader, val_data_loader, encoder, decoder
         record_loss['shot'].append(total_shot_loss)
         record_loss['area'].append(total_area_loss)
 
-        # # validation
-        # val_loss = evaluation_non_rnn(val_data_loader, encoder, decoder, criterion, config, config['model_type'], samples=1, device=device)
-        # record_val_loss['total'].append(val_loss['total'])
-        # record_val_loss['entropy'].append(val_loss['entropy'])
-        # record_val_loss['mse'].append(val_loss['mse'])
-        # record_val_loss['mae'].append(val_loss['mae'])
-
-        # if val_loss['total'] <= best_val_loss:
-        #     save(encoder, decoder, config, k_fold_index, epoch)
-        #     best_val_loss = val_loss['total']
-
-        # if epoch != 0 and epoch % 20 == 0:
-        #     save(encoder, decoder, config, k_fold_index, epoch)
-
     config['total_loss'] = total_loss
     config['total_shot_loss'] = total_shot_loss
     config['total_area_loss'] = total_area_loss
