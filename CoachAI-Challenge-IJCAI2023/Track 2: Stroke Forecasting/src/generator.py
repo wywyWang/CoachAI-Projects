@@ -14,7 +14,7 @@ def set_seed(seed_value):
 
 
 if __name__ == "__main__":
-    SAMPLES = 6
+    SAMPLES = 6                               # set to 6 to meet the requirement of this challenge
 
     model_path = sys.argv[1]
     config = ast.literal_eval(open(f"{model_path}/config").readline())

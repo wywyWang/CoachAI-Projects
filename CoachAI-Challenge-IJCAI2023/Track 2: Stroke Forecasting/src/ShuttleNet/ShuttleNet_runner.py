@@ -10,6 +10,9 @@ PAD = 0
 
 
 def Gaussian2D_loss(V_pred, V_trgt):
+    """
+    Compute NLL on 2D loss. Refer to paper for more details
+    """
     #mux, muy, sx, sy, corr
     #assert V_pred.shape == V_trgt.shape
     normx = V_trgt[:, 0] - V_pred[:, 0]
