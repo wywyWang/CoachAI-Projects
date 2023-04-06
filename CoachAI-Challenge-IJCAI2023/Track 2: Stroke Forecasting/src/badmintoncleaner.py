@@ -36,6 +36,7 @@ class BadmintonDataset(Dataset):
         pad_output_y = np.full(self.max_ball_round, fill_value=PAD, dtype=float)
         pad_output_player = np.full(self.max_ball_round, fill_value=PAD, dtype=int)
 
+        # pad or trim based on the max ball round
         if len(ball_round) > self.max_ball_round:
             rally_len = self.max_ball_round
 
@@ -87,9 +88,9 @@ def prepare_dataset(config):
     train_dataloader = DataLoader(train_dataset, batch_size=config['batch_size'], shuffle=True)
 
     val_dataset = BadmintonDataset(val_matches, config)
-    val_dataloader = DataLoader(val_dataset, batch_size=config['batch_size'], shuffle=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=config['batch_size'], shuffle=False)
 
     test_dataset = BadmintonDataset(test_matches, config)
-    test_dataloader = DataLoader(test_dataset, batch_size=config['batch_size'], shuffle=True)
+    test_dataloader = DataLoader(test_dataset, batch_size=config['batch_size'], shuffle=False)
 
     return config, train_dataloader, val_dataloader, test_dataloader, train_matches, val_matches, test_matches
