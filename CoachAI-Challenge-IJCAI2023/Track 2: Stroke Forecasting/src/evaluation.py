@@ -9,7 +9,7 @@ class StrokeEvaluator:
     def __init__(self, path):
         self.type_list = ['short service', 'net shot', 'lob', 'clear', 'drop', 'push/rush', 'smash', 'defensive shot', 'drive', 'long service']
         self.prediction = pd.read_csv(f"{path}prediction.csv")
-        self.ground_truth = pd.read_csv(f"{path}val_kaggle.csv")
+        self.ground_truth = pd.read_csv(f"{path}val_gt.csv")
 
         self.l1_loss = torch.nn.L1Loss(reduction='mean')
         self.ce_loss = torch.nn.NLLLoss(reduction='mean')   # we use NLL since we need to check if we need to softmax the probs of each shot
@@ -44,7 +44,7 @@ class StrokeEvaluator:
         group = self.prediction[['rally_id', 'sample_id', 'ball_round', 'landing_x', 'landing_y', 'short service', 'net shot', 'lob', 'clear', 'drop', 'push/rush', 'smash', 'defensive shot', 'drive', 'long service']].groupby('rally_id').apply(lambda r: (r['sample_id'].values, r['ball_round'].values, r['landing_x'].values, r['landing_y'].values, r['short service'].values, r['net shot'].values, r['lob'].values, r['clear'].values, r['drop'].values, r['push/rush'].values, r['smash'].values, r['defensive shot'].values, r['drive'].values, r['long service'].values))
         ground_truth = self.ground_truth[['rally_id', 'ball_round', 'landing_x', 'landing_y', 'type']].groupby('rally_id').apply(lambda r: (r['ball_round'].values, r['landing_x'].values, r['landing_y'].values, r['type'].values))
 
-        for i, rally_id in tqdm(enumerate(group.index), total=len(group)):
+        for i, rally_id in tqdm(enumerate(ground_truth.index), total=len(ground_truth)):
             best_sample_score, best_ce_score, best_mae_score = 1e6, 1e6, 1e6
             sample_id, ball_round, landing_x, landing_y, short_service, net_shot, lob, clear, drop, push_rush, smash, defensive_shot, drive, long_service = group[rally_id]
             
@@ -80,7 +80,7 @@ class StrokeEvaluator:
             total_ce_score += best_ce_score
             total_mae_score += best_mae_score
 
-        rally_ids.append('total'), rally_score.append(total_score/len(group.index)), rally_ce_score.append(total_ce_score/len(group.index)), rally_mae_score.append(total_mae_score/len(group.index))
+        rally_ids.append('total'), rally_score.append(round(total_score/len(group.index), 5)), rally_ce_score.append(round(total_ce_score/len(group.index), 5)), rally_mae_score.append(round(total_mae_score/len(group.index), 5))
         record_df = pd.DataFrame({'type': rally_ce_score, 'area': rally_mae_score, 'overall': rally_score})
         record_df.index = rally_ids
         record_df.to_csv("record_score.csv")
