@@ -63,7 +63,7 @@ class StrokeEvaluator:
                 # compute type score
                 prediction_type = []
                 for shot_index in range(start_index, start_index+ground_truth_len):
-                    prediction_type.append([short_service[shot_index], long_service[shot_index], clear[shot_index], push_rush[shot_index], smash[shot_index], defensive_shot[shot_index], drive[shot_index], net_shot[shot_index], lob[shot_index], drop[shot_index]])
+                    prediction_type.append([short_service[shot_index], net_shot[shot_index], lob[shot_index], clear[shot_index], drop[shot_index], push_rush[shot_index], smash[shot_index], defensive_shot[shot_index], drive[shot_index], long_service[shot_index]])
                 prediction_type = torch.tensor(prediction_type)
                 type_score = self.ce_loss(torch.log(prediction_type), converted_true_types).item()  # need to perform log operation
                 if math.isinf(type_score):
