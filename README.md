@@ -10,7 +10,7 @@ The high-level concepts of each project are as follows:
 4. [Strategic Environment](https://github.com/wywyWang/CoachAI-Projects/tree/main/Strategic%20Environment) published at *AAAI-23 Student Abstract* designs a safe and reproducible badminton environment for turn-based sports, which simulates rallies with different angles of view and designs the states, actions, and training procedures.
 5. [Movement Forecasting](https://github.com/wywyWang/CoachAI-Projects/tree/main/Movement%20Forecasting) published at *AAAI-23* proposes the first movement forecasting task, which contains not only the goal of stroke forecasting but also the movement of players, by DyMF, a novel dynamic graphs and hierarchical fusion model based on the proposed player movements (PM) graphs.
 6. [CoachAI-Challenge-IJCAI2023](https://github.com/wywyWang/CoachAI-Projects/tree/main/CoachAI-Challenge-IJCAI2023) is a badminton challenge (CC4) hosted at *IJCAI-23*. Please find the [website](https://sites.google.com/view/coachai-challenge-2023/) for more details.
-7. [ShuttleSet] published at *KDD-23* is the largest badminton singles dataset with stroke-level records.
+7. [ShuttleSet](https://github.com/wywyWang/CoachAI-Projects/tree/main/ShuttleSet) published at *KDD-23* is the largest badminton singles dataset with stroke-level records.
 
 ## Publications and Contributions
 1. [Wei-Yao Wang, Yung-Chang Huang, Tsi-Ui Ik, Wen-Chih Peng, "ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis", KDD 2023](https://arxiv.org/abs/2306.04948)
