@@ -3,7 +3,7 @@ Official dataset of the paper **ShuttleSet: A Human-Annotated Stroke-Level Singl
 Paper: https://arxiv.org/abs/2306.04948
 
 ## Dataset Descriptions
-The field labels of ShuttleSet are mainly follow [the BLSR representaiton](https://dl.acm.org/doi/full/10.1145/3551391).
+The field labels of ShuttleSet are mainly follow [the BLSR representaiton](https://dl.acm.org/doi/full/10.1145/3551391). ShuttleSet contains 104 sets, 3,685 rallies, and 36,492 strokes in 44 matches between 2018 and 2021 with 27 top-ranking men's singles and women's singles players.
 ### match.csv
 * video: lists the folder name in set/.
 * id: serial number of matches.
@@ -58,10 +58,11 @@ The field labels of ShuttleSet are mainly follow [the BLSR representaiton](https
 | long service | 發長球 |
 
 ## Benchmark 1: Shot Influence
-
+The implementation details and the paper can be found in [the repo](https://github.com/wywyWang/CoachAI-Projects/tree/main/Shot%20Influence).
 ## Benchmark 2: Stroke Forecasting
-
+The implementation details and the paper can be found in [the repo](https://github.com/wywyWang/CoachAI-Projects/tree/main/Stroke%20Forecasting).
 ## Benchmark 3: Movement Forecasting
+The implementation details and the paper can be found in [the repo](https://github.com/wywyWang/CoachAI-Projects/tree/main/Movement%20Forecasting).
 
 ## Citation
 If you use our dataset or find our work is relevant to your research, please cite:
