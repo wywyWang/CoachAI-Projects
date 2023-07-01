@@ -21,7 +21,7 @@ The field labels of ShuttleSet are mainly follow [the BLSR representaiton](https
 * frame_num: sec * fps = frame_num
 * roundscore_A: Player A’s current score in the set
 * roundscore_B: Player B’s current score in the set
-* player: the player who performed the shot
+* player: the player who performed the shot (A is the player winning the match, B otherwise)
 * type: the type of shot (total 18). Please find the translation below.
 * aroundhead: hit the shuttle around the head or not
 * backhand: hit the shuttle with back hand or not
