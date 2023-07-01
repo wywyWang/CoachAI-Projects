@@ -1,5 +1,5 @@
 # Track 2: Forecasting Future Turn-Based Strokes in Badminton Rallies
-
+The detailed discussions and the dataset descriptions are available in [paper](https://arxiv.org/abs/2306.15664).
 ## :badminton: Task Introduction
 The goal of this track is to **forecast future strokes including shot types and locations given the past stroke sequences**, namely stroke forecasting. For each singles rally, given the observed 4 strokes with type-area pairs and two players, the goal is to predict the future strokes including shot types and area coordinates for the next n steps. n is various based on the length of the rally.
 
