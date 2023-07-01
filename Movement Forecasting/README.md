@@ -44,3 +44,17 @@ In addition, hierarchical fusion modules are designed to incorporate the style i
    python evaluate.py ${model_folder_path}
    ```
    
+## Citation
+If you use our dataset or find our work is relevant to your research, please cite:
+```
+@inproceedings{DyMF_Badminton, 
+    author    = {Kai{-}Shiang Chang and
+               Wei{-}Yao Wang and
+               Wen{-}Chih Peng},
+    title={Where Will Players Move Next? Dynamic Graphs and Hierarchical Fusion for Movement Forecasting in Badminton}, 
+    publisher = {{AAAI} Press},
+    booktitle = {{AAAI}},
+    year={2023},
+    pages={6998-7005} 
+}
+```
