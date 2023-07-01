@@ -37,7 +37,7 @@ The field labels of ShuttleSet are mainly follow [the BLSR representaiton](https
 ### Shot type translation
 
 | English | Chinese |
-| :-----: | : ----: |
+| ------- | ------- |
 | net shot | 放小球 |
 | return net | 擋小球 |
 | smash | 殺球 |
