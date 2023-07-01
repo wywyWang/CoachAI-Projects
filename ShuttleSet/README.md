@@ -35,6 +35,7 @@ The field labels of ShuttleSet are mainly follow [the BLSR representaiton](https
 * opponent_location_area: the location of the player who prepared to receive the shot
 * opponent_location_x, opponent_location_y: the coordinates of the opponent’s location when the player hits the shuttle
 ### Shot type translation
+
 | English | Chinese |
 | :-----: | : ----: |
 | net shot | 放小球 |
