@@ -3,6 +3,9 @@
 ## :badminton: Task Introduction
 The goal of this track is to **forecast future strokes including shot types and locations given the past stroke sequences**, namely stroke forecasting. For each singles rally, given the observed 4 strokes with type-area pairs and two players, the goal is to predict the future strokes including shot types and area coordinates for the next n steps. n is various based on the length of the rally.
 
+## :badminton: Official Leaderboard
+<img width="624" alt="Model framework" src="./leaderboard.png">
+
 ## :badminton:	Data Overview
 * Input: landing_x, landing_y, shot type of past 4 strokes 
 * Output: landing_x, landing_y, shot type of future strokes 
@@ -85,4 +88,18 @@ python generator.py {model_path}
 - Both ground truth and prediction files are default in the `data` folder
 ```=bash
 python evaluation.py
+```
+
+## Citation
+If you use our dataset or find our work is relevant to your research, please cite:
+```
+@article{ShuttleSet22,
+  author    = {Wei{-}Yao Wang and
+               Wei{-}Wei Du and
+               Wen{-}Chih Peng},
+  title     = {ShuttleSet22: Benchmarking Stroke Forecasting with Stroke-Level Badminton Dataset},
+  journal   = {CoRR},
+  volume    = {abs/2306.15664},
+  year      = {2023}
+}
 ```
