@@ -1,45 +1,45 @@
-id,video,tournament,round,year,month,day,set,duration,winner,loser,downcourt
-1,Kento_MOMOTA_CHOU_Tien_Chen_Fuzhou_Open_2019_Finals,Fuzhou Open 2019,Finals,2019,11,10,3,83,Kento MOMOTA,CHOU Tien Chen,0
-2,CHEN_Long_CHOU_Tien_Chen_World_Tour_Finals_Group_Stage,World Tour Finals,Group-Stage,2019,12,13,2,52,CHEN Long,CHOU Tien Chen,1
-3,Kento_MOMOTA_CHOU_Tien_Chen_KOREA_OPEN_2019_Final,KOREA OPEN 2019,Finals,2019,9,29,2,53,Kento MOMOTA,CHOU Tien Chen,1
-4,CHEN_Long_CHOU_Tien_Chen_Denmark_Open_2019_QuarterFinal,Denmark Open 2019,Quarter-finals,2019,10,17,2,54,CHEN Long,CHOU Tien Chen,0
-5,Kento_MOMOTA_CHOU_Tien_Chen_Fuzhou_Open_2018_Finals,Fuzhou Open 2018,Finals,2018,11,11,3,67,Kento MOMOTA,CHOU Tien Chen,0
-6,Kento_MOMOTA_CHOU_Tien_Chen_Denmark_Open_2018_Finals,Denmark Open 2018,Finals,2018,10,21,3,77,Kento MOMOTA,CHOU Tien Chen,1
-7,Kento_MOMOTA_CHOU_Tien_Chen_Malaysia_Open_2018_QuarterFinals,Malaysia Open 2018,Quarter-finals,2018,6,29,2,53,Kento MOMOTA,CHOU Tien Chen,0
-8,CHOU_Tien_Chen_Anders_ANTONSEN_Fuzhou_Open_2019_Semi-finals,Fuzhou Open 2019,Semi-finals,2019,11,9,2,45,CHOU Tien Chen,Anders ANTONSEN,0
-9,CHOU_Tien_Chen_Jonatan_CHRISTIE_Sudirman_Cup_2019_Quarter-finals,Sudirman Cup 2019,Quarter-finals,2019,5,24,2,36,CHOU Tien Chen,Jonatan CHRISTIE,1
-10,CHOU_Tien_Chen_NG_Ka_Long_Angus_Sudirman_Cup_2019_Group_Stage,Sudirman Cup 2019,Group-Stage,2019,5,19,2,41,CHOU Tien Chen,NG Ka Long Angus,0
-11,CHOU_Tien_Chen_Jonatan_CHRISTIE_Indonesia_Open_2019_Quarter-finals,Indonesia Open 2019,Quarter-finals,2019,7,19,3,76,CHOU Tien Chen,Jonatan CHRISTIE,0
-12,NG_Ka_Long_Angus_SHI_Yu_Qi_Thailand_Masters_2020_SemiFinals,Thailand Masters 2020,Semi-finals,2020,1,25,2,37,NG Ka Long Angus,SHI Yuqi,1
-13,Kento_MOMOTA_Viktor_AXELSEN_Malaysia_Masters_2020_Finals,Malaysia Masters 2020,Finals,2020,1,12,2,54,Kento MOMOTA,Viktor AXELSEN,1
-14,Anders_ANTONSEN_Jonatan_CHRISTIE Indonesia_Masters_2020_QuarterFinals,Indonesia Masters 2020,Quarter-finals,2020,1,17,3,68,Anders ANTONSEN,Jonatan CHRISTIE,0
-15,Anthony_Sinisuka_GINTING_Anders_ANTONSEN_Indonesia_Masters_2020_Final,Indonesia Masters 2020,Finals,2020,1,19,3,71,Anthony Sinisuka GINTING,Anders ANTONSEN,0
-16,Anthony_Sinisuka_GINTING_Viktor_AXELSEN _Indonesia_Masters_2020_SemiFinals,Indonesia Masters 2020,Semi-finals,2020,1,18,2,43,Anthony Sinisuka GINTING,Viktor AXELSEN,0
-17,NG_Ka_Long_Angus_Jonatan_CHRISTIE_Malaysia_Masters_2020_QuarterFinals,Malaysia Masters 2020,Quarter-finals,2020,1,10,3,65,NG Ka Long Angus,Jonatan CHRISTIE,1
-18,Viktor_AXELSEN _SHI_Yu_Qi_All_England_Open_2020_QuarterFinals,All England Open 2020,Quarter-finals,2020,3,13,2,40,Viktor AXELSEN,SHI Yuqi,1
-19,Viktor_AXELSEN_CHEN_Long_Malaysia_Masters_2020_QuarterFinals,Malaysia Masters 2020,Quarter-finals,2020,1,10,3,68,Viktor AXELSEN,CHEN Long,1
-20,Viktor_AXELSEN_NG_Ka_Long_Angus_Malaysia_Masters_2020_SemiFinals,Malaysia Masters 2020,Semi-finals,2020,1,11,2,44,Viktor AXELSEN,NG Ka Long Angus,0
-21,An_Se_Young_Ratchanok_Intanon_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,An Se Young,Ratchanok INTANON,1
-22,Mia_Blichfeldt_Busanan_Ongbamrungphan_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,45,Mia BLICHFELDT,Busanan ONGBAMRUNGPHAN,1
-23,Ng_Ka_Long_Angus_Lee_Cheuk_Yiu_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,NG Ka Long Angus,LEE Cheuk Yiu,1
-24,Anthony_Sinisuka_Ginting_Rasmus_Gemke_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,3,66,Anthony Sinisuka GINTING,Rasmus GEMKE,0
-25,Carolina_Marin_Supanida_Katethong_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,Carolina MARIN,Supanida KATETHONG,0
-26,Viktor_Axelsen_Jonatan_Christie_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,40,Viktor AXELSEN,Jonatan CHRISTIE,1
-27,Viktor_Axelsen_Anthony_Sinisuka_Ginting_YONEX_Thailand_Open_2021_SemiFinals,YONEX THAILAND OPEN 2021,Semi-finals,2021,1,16,3,63,Viktor AXELSEN,Anthony Sinisuka GINTING,1
-28,Viktor_Axelsen_Ng_Ka_Long_Angus_YONEX_Thailand_Open_2021_Finals,YONEX THAILAND OPEN 2021,Finals,2021,1,17,2,44,Viktor AXELSEN,NG Ka Long Angus,1
-29,An_Se_Young_Pornpawee_Chochuwong_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,44,An Se Young,Pornpawee CHOCHUWONG,0
-30,Anders_Antonsen_Sameer_Verma_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,3,81,Anders ANTONSEN,Sameer VERMA,1
-31,Carolina_Marin_Neslihan_Yigit_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,34,Carolina MARIN,Neslihan YIGIT,0
-32,Hans-Kristian_Solberg_Vittinghus_Lee_Cheuk_Yu_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,3,77,Hans-Kristian Solberg VITTINGHUS,LEE Cheuk Yiu,1
-33,Viktor_Axelsen_Liew_Daren_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,41,Viktor AXELSEN,LIEW Daren,1
-34,Ratchanok_Intanon_Pusarla_V._Sindhu_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,38,Ratchanok INTANON,PUSARLA V. Sindhu,0
-35,Carolina_Marin_An_Se_Young_TOYOTA_THAILAND_OPEN_2021_SemiFinals,TOYOTA THAILAND OPEN 2021,Semi-finals,2021,1,23,2,51,Carolina MARIN,An Se Young,0
-36,Hans-Kristian_Solberg_Vittinghus_Anders_Antonsen_TOYOTA_THAILAND_OPEN_2021_SemiFinals,TOYOTA THAILAND OPEN 2021,Semi-finals,2021,1,23,2,45,Hans-Kristian Solberg VITTINGHUS,Anders ANTONSEN,1
-37,Viktor_Axelsen_Hans-Kristian_Solberg_VIittinghus_TOYOTA_THAILAND_OPEN_2021_Finals,TOYOTA THAILAND OPEN 2021,Finals,2021,1,24,2,40,Viktor AXELSEN,Hans-Kristian Solberg VITTINGHUS,0
-38,Carolina_Marin_An_Se_Young_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,55,An Se Young,Carolina MARIN,1
-39,Anthony_Sinisuka_Ginting_Lee_Zii_Jia_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,50,Anthony Sinisuka GINTING,LEE Zii Jia,1
-40,Evgeniya_Kosetskaya_Michelle_Li_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,2,34,Evgeniya KOSETSKAYA,Michelle LI,1
-41,Ng_Ka_Long_Angus_Kidambi_Srikanth_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,65,NG Ka Long Angus,KIDAMBI Srikanth,1
-42,Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,2,42,PUSARLA V. Sindhu,Pornpawee CHOCHUWONG,0
-43,Carolina_Marin_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_SemiFinals,HSBC BWF WORLD TOUR FINALS 2020,Semi-finals,2021,1,30,2,40,Carolina MARIN,Pornpawee CHOCHUWONG,0
-44,Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals,HSBC BWF WORLD TOUR FINALS 2020,Finals,2021,1,31,3,60,Anders ANTONSEN,Viktor AXELSEN,0
+id,video,tournament,round,year,month,day,set,duration,winner,loser,downcourt,url
+1,Kento_MOMOTA_CHOU_Tien_Chen_Fuzhou_Open_2019_Finals,Fuzhou Open 2019,Finals,2019,11,10,3,83,Kento MOMOTA,CHOU Tien Chen,0,https://www.youtube.com/watch?v=O669aZhH0LI
+2,CHEN_Long_CHOU_Tien_Chen_World_Tour_Finals_Group_Stage,World Tour Finals,Group-Stage,2019,12,13,2,52,CHEN Long,CHOU Tien Chen,1,https://www.youtube.com/watch?v=-aOI9_JxoWc
+3,Kento_MOMOTA_CHOU_Tien_Chen_KOREA_OPEN_2019_Final,KOREA OPEN 2019,Finals,2019,9,29,2,53,Kento MOMOTA,CHOU Tien Chen,1,https://www.youtube.com/watch?v=eugfCRwSBJo
+4,CHEN_Long_CHOU_Tien_Chen_Denmark_Open_2019_QuarterFinal,Denmark Open 2019,Quarter-finals,2019,10,17,2,54,CHEN Long,CHOU Tien Chen,0,https://www.youtube.com/watch?v=y6QbtrTV-K0
+5,Kento_MOMOTA_CHOU_Tien_Chen_Fuzhou_Open_2018_Finals,Fuzhou Open 2018,Finals,2018,11,11,3,67,Kento MOMOTA,CHOU Tien Chen,0,https://www.youtube.com/watch?v=xhUi2KpmVkI
+6,Kento_MOMOTA_CHOU_Tien_Chen_Denmark_Open_2018_Finals,Denmark Open 2018,Finals,2018,10,21,3,77,Kento MOMOTA,CHOU Tien Chen,1,https://www.youtube.com/watch?v=SYyvDrUgClc
+7,Kento_MOMOTA_CHOU_Tien_Chen_Malaysia_Open_2018_QuarterFinals,Malaysia Open 2018,Quarter-finals,2018,6,29,2,53,Kento MOMOTA,CHOU Tien Chen,0,https://www.youtube.com/watch?v=Y0tCJ6DWXKM
+8,CHOU_Tien_Chen_Anders_ANTONSEN_Fuzhou_Open_2019_Semi-finals,Fuzhou Open 2019,Semi-finals,2019,11,9,2,45,CHOU Tien Chen,Anders ANTONSEN,0,https://www.youtube.com/watch?v=32j2Tg64Zbg
+9,CHOU_Tien_Chen_Jonatan_CHRISTIE_Sudirman_Cup_2019_Quarter-finals,Sudirman Cup 2019,Quarter-finals,2019,5,24,2,36,CHOU Tien Chen,Jonatan CHRISTIE,1,https://www.youtube.com/watch?v=8E98Gpk-fOM
+10,CHOU_Tien_Chen_NG_Ka_Long_Angus_Sudirman_Cup_2019_Group_Stage,Sudirman Cup 2019,Group-Stage,2019,5,19,2,41,CHOU Tien Chen,NG Ka Long Angus,0,https://www.youtube.com/watch?v=li1sbr6S34g
+11,CHOU_Tien_Chen_Jonatan_CHRISTIE_Indonesia_Open_2019_Quarter-finals,Indonesia Open 2019,Quarter-finals,2019,7,19,3,76,CHOU Tien Chen,Jonatan CHRISTIE,0,https://www.youtube.com/watch?v=yD6WKVqsAKc
+12,NG_Ka_Long_Angus_SHI_Yu_Qi_Thailand_Masters_2020_SemiFinals,Thailand Masters 2020,Semi-finals,2020,1,25,2,37,NG Ka Long Angus,SHI Yuqi,1,
+13,Kento_MOMOTA_Viktor_AXELSEN_Malaysia_Masters_2020_Finals,Malaysia Masters 2020,Finals,2020,1,12,2,54,Kento MOMOTA,Viktor AXELSEN,1,https://www.youtube.com/watch?v=boQC4J4E1ZQ
+14,Anders_ANTONSEN_Jonatan_CHRISTIE Indonesia_Masters_2020_QuarterFinals,Indonesia Masters 2020,Quarter-finals,2020,1,17,3,68,Anders ANTONSEN,Jonatan CHRISTIE,0,https://www.youtube.com/watch?v=5W6txLGZ1Rs
+15,Anthony_Sinisuka_GINTING_Anders_ANTONSEN_Indonesia_Masters_2020_Final,Indonesia Masters 2020,Finals,2020,1,19,3,71,Anthony Sinisuka GINTING,Anders ANTONSEN,0,https://www.youtube.com/watch?v=yu9oyMXRGHY
+16,Anthony_Sinisuka_GINTING_Viktor_AXELSEN _Indonesia_Masters_2020_SemiFinals,Indonesia Masters 2020,Semi-finals,2020,1,18,2,43,Anthony Sinisuka GINTING,Viktor AXELSEN,0,https://www.youtube.com/watch?v=5kS_a7vS5xI
+17,NG_Ka_Long_Angus_Jonatan_CHRISTIE_Malaysia_Masters_2020_QuarterFinals,Malaysia Masters 2020,Quarter-finals,2020,1,10,3,65,NG Ka Long Angus,Jonatan CHRISTIE,1,https://www.youtube.com/watch?v=G9r400zkkz8
+18,Viktor_AXELSEN _SHI_Yu_Qi_All_England_Open_2020_QuarterFinals,All England Open 2020,Quarter-finals,2020,3,13,2,40,Viktor AXELSEN,SHI Yuqi,1,https://www.youtube.com/watch?v=8lHAsyRhYYQ
+19,Viktor_AXELSEN_CHEN_Long_Malaysia_Masters_2020_QuarterFinals,Malaysia Masters 2020,Quarter-finals,2020,1,10,3,68,Viktor AXELSEN,CHEN Long,1,https://www.youtube.com/watch?v=YmW83aQFADg
+20,Viktor_AXELSEN_NG_Ka_Long_Angus_Malaysia_Masters_2020_SemiFinals,Malaysia Masters 2020,Semi-finals,2020,1,11,2,44,Viktor AXELSEN,NG Ka Long Angus,0,https://www.youtube.com/watch?v=4e3JJ4rvT3Q
+21,An_Se_Young_Ratchanok_Intanon_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,An Se Young,Ratchanok INTANON,1,https://www.youtube.com/watch?v=gloiZ_gTJaE
+22,Mia_Blichfeldt_Busanan_Ongbamrungphan_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,45,Mia BLICHFELDT,Busanan ONGBAMRUNGPHAN,1,https://www.youtube.com/watch?v=8u_UHCnYSkk
+23,Ng_Ka_Long_Angus_Lee_Cheuk_Yiu_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,NG Ka Long Angus,LEE Cheuk Yiu,1,https://www.youtube.com/watch?v=rSK9Qx8LapE
+24,Anthony_Sinisuka_Ginting_Rasmus_Gemke_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,3,66,Anthony Sinisuka GINTING,Rasmus GEMKE,0,https://www.youtube.com/watch?v=NlDrJyQUTSI
+25,Carolina_Marin_Supanida_Katethong_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,Carolina MARIN,Supanida KATETHONG,0,https://www.youtube.com/watch?v=FZPrpoGdyHI
+26,Viktor_Axelsen_Jonatan_Christie_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,40,Viktor AXELSEN,Jonatan CHRISTIE,1,https://www.youtube.com/watch?v=RRI_k2KZgOM
+27,Viktor_Axelsen_Anthony_Sinisuka_Ginting_YONEX_Thailand_Open_2021_SemiFinals,YONEX THAILAND OPEN 2021,Semi-finals,2021,1,16,3,63,Viktor AXELSEN,Anthony Sinisuka GINTING,1,https://www.youtube.com/watch?v=HTBf9wFL0mk
+28,Viktor_Axelsen_Ng_Ka_Long_Angus_YONEX_Thailand_Open_2021_Finals,YONEX THAILAND OPEN 2021,Finals,2021,1,17,2,44,Viktor AXELSEN,NG Ka Long Angus,1,https://www.youtube.com/watch?v=IuXmsimDOW8
+29,An_Se_Young_Pornpawee_Chochuwong_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,44,An Se Young,Pornpawee CHOCHUWONG,0,https://www.youtube.com/watch?v=TXT-qlniM90
+30,Anders_Antonsen_Sameer_Verma_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,3,81,Anders ANTONSEN,Sameer VERMA,1,https://www.youtube.com/watch?v=YP8YlZkrQq8
+31,Carolina_Marin_Neslihan_Yigit_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,34,Carolina MARIN,Neslihan YIGIT,0,https://www.youtube.com/watch?v=gJ_KHu0EC6I
+32,Hans-Kristian_Solberg_Vittinghus_Lee_Cheuk_Yu_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,3,77,Hans-Kristian Solberg VITTINGHUS,LEE Cheuk Yiu,1,https://www.youtube.com/watch?v=ROAnTfC_8zA
+33,Viktor_Axelsen_Liew_Daren_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,41,Viktor AXELSEN,LIEW Daren,1,https://www.youtube.com/watch?v=OzRtd3D0hEo
+34,Ratchanok_Intanon_Pusarla_V._Sindhu_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,2021,1,22,2,38,Ratchanok INTANON,PUSARLA V. Sindhu,0,https://www.youtube.com/watch?v=o51ingUOU20
+35,Carolina_Marin_An_Se_Young_TOYOTA_THAILAND_OPEN_2021_SemiFinals,TOYOTA THAILAND OPEN 2021,Semi-finals,2021,1,23,2,51,Carolina MARIN,An Se Young,0,https://www.youtube.com/watch?v=XmJ-OdVFQtk
+36,Hans-Kristian_Solberg_Vittinghus_Anders_Antonsen_TOYOTA_THAILAND_OPEN_2021_SemiFinals,TOYOTA THAILAND OPEN 2021,Semi-finals,2021,1,23,2,45,Hans-Kristian Solberg VITTINGHUS,Anders ANTONSEN,1,https://www.youtube.com/watch?v=D27aAZvuRTw
+37,Viktor_Axelsen_Hans-Kristian_Solberg_VIittinghus_TOYOTA_THAILAND_OPEN_2021_Finals,TOYOTA THAILAND OPEN 2021,Finals,2021,1,24,2,40,Viktor AXELSEN,Hans-Kristian Solberg VITTINGHUS,0,https://www.youtube.com/watch?v=4rQUHv9oGpI
+38,Carolina_Marin_An_Se_Young_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,55,An Se Young,Carolina MARIN,1,https://www.youtube.com/watch?v=OH6dnTXhZy4
+39,Anthony_Sinisuka_Ginting_Lee_Zii_Jia_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,50,Anthony Sinisuka GINTING,LEE Zii Jia,1,https://www.youtube.com/watch?v=XYY6YXv6Nss
+40,Evgeniya_Kosetskaya_Michelle_Li_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,2,34,Evgeniya KOSETSKAYA,Michelle LI,1,https://www.youtube.com/watch?v=IDSr0z5f52k
+41,Ng_Ka_Long_Angus_Kidambi_Srikanth_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,65,NG Ka Long Angus,KIDAMBI Srikanth,1,https://www.youtube.com/watch?v=yr2JQTdzNjY
+42,Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,2,42,PUSARLA V. Sindhu,Pornpawee CHOCHUWONG,0,https://www.youtube.com/watch?v=Mawo3l3Hb9E
+43,Carolina_Marin_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_SemiFinals,HSBC BWF WORLD TOUR FINALS 2020,Semi-finals,2021,1,30,2,40,Carolina MARIN,Pornpawee CHOCHUWONG,0,https://www.youtube.com/watch?v=vfzkc3lFTdM
+44,Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals,HSBC BWF WORLD TOUR FINALS 2020,Finals,2021,1,31,3,60,Anders ANTONSEN,Viktor AXELSEN,0,https://www.youtube.com/watch?v=j7_cjmJDYNU
