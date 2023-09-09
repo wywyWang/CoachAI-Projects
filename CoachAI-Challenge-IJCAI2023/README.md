@@ -7,6 +7,8 @@ In this track, participants develop computer vision technology to automatically 
 ### Track 2: Forecasting Future Turn-Based Strokes in Badminton Rallies
 The goal of this track is to forecast future strokes including shot types and locations given the past stroke sequences, namely stroke forecasting. For each singles rally, given the observed 4 strokes with type-area pairs and two players, the goal is to predict the future strokes including shot types and area coordinates for the next n steps. n is various based on the length of the rally. **Please visit the [repo](https://github.com/wywyWang/CoachAI-Projects/tree/main/CoachAI-Challenge-IJCAI2023/Track%202%3A%20Stroke%20Forecasting) for more details.
 
+The data of this track has been released in `data` folder. The original data is also provided in [ShuttleSet22](https://github.com/wywyWang/CoachAI-Projects/tree/main/CoachAI-Challenge-IJCAI2023/ShuttleSet22).
+
 ## About Readme
 
 Welcome to the challenge! This Readme is designed to keep you informed with the latest updates and provide a platform for addressing questions in our forum.
@@ -17,4 +19,5 @@ Thank you for visiting our website & Readme, and we look forward to your active 
 
 ---
 ### Reference:
-Competition website Link: [https://sites.google.com/view/coachai-challenge-2023/home?authuser=0](https://sites.google.com/view/coachai-challenge-2023/home?authuser=0)
+- Competition website Link: [https://sites.google.com/view/coachai-challenge-2023/home?authuser=0](https://sites.google.com/view/coachai-challenge-2023/home?authuser=0)
+- [ShuttleSet22 Paper](https://arxiv.org/abs/2306.15664)

@@ -1,0 +1,59 @@
+id,video,tournament,round,year,month,day,set,duration,winner,loser,downcourt,db
+1,Ng_Ka_Long_Angus_Lee_Cheuk_Yiu_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,2,44,NG Ka Long Angus,LEE Cheuk Yiu,1,0
+2,Carolina_Marin_An_Se_Young_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,55,An Se Young,Carolina MARIN,1,0
+3,Anthony_Sinisuka_Ginting_Lee_Zii_Jia_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,50,Anthony Sinisuka GINTING,LEE Zii Jia,1,0
+4,Ng_Ka_Long_Angus_Kidambi_Srikanth_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,3,65,NG Ka Long Angus,KIDAMBI Srikanth,1,0
+5,Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,2021,1,29,2,42,PUSARLA V. Sindhu,Pornpawee CHOCHUWONG,0,0
+6,Carolina_Marin_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_SemiFinals,HSBC BWF WORLD TOUR FINALS 2020,Semi-finals,2021,1,30,2,40,Carolina MARIN,Pornpawee CHOCHUWONG,0,0
+7,Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals,HSBC BWF WORLD TOUR FINALS 2020,Finals,2021,1,31,3,60,Anders ANTONSEN,Viktor AXELSEN,0,0
+8,Lakshya_SEN_LOH_Kean_Yew_YONEX_SUNRISE_India_Open_2022_ Finals,YONEX-SUNRISE India Open 2022,Finals,2022.0,1.0,16.0,2,54,Lakshya SEN,LOH Kean Yew,1.0,0.0
+9,Kunlavut_VITIDSARN_LEE_Zii_Jia_YONEX_GAINWARD_German_Open_2022_SemiFinals,YONEX GAINWARD German Open 2022,Semi-finals,2022.0,3.0,12.0,2,43,Kunlavut VITIDSARN,LEE Zii Jia,1.0,0.0
+10,Akane_YAMAGUCHI_AN_Seyoung_YONEX_All_England_Open_Badminton_Championships_2022_Finals,YONEX All England Open Badminton Championships 2022,Finals,2022.0,3.0,20.0,2,44,Akane YAMAGUCHI,An Se Young,1.0,0.0
+11,Viktor_AXELSEN_Lakshya_SEN_YONEX_All_England_Open_2022_Finals,YONEX All England Open Badminton Championships 2022,Finals,2022.0,3.0,20.0,2,53,Viktor AXELSEN,Lakshya SEN,0.0,0.0
+12,AN_Seyoung_PUSARLA_V._Sindhu_Korea_Open_Badminton_Championships_2022_Semi_Final,Korea Open Badminton Championships 2022,Semi-finals,2022.0,4.0,9.0,2,48,An Se Young,PUSARLA V. Sindhu,1.0,0.0
+13,He_Bing_Jiao_Chen_Yu_Fei_GWANGJU_YONEX_Korea_Masters_2022_Final,GWANGJU YONEX Korea Masters 2022,Finals,2022.0,4.0,17.0,3,63,HE Bingjiao,CHEN Yufei,0.0,0.0
+14,LEE_Zii_Jia_Kento_MOMOTA_Tota_Energies_BWF_Thomas_and_Uber_Cup_Finals_2022_Group D_Trim,TotalEnergies BWF Thomas and Uber Cup Finals 2022,Group-Stage,2022.0,5.0,11.0,2,46,LEE Zii Jia,Kento MOMOTA,0.0,0.0
+15,AN_Se_Young_Akane_YAMAGUCHI_TotalEnergies_BWF_Thomas_and_Uber_Cup_Finals_2022_Semifinals,TotalEnergies BWF Thomas and Uber Cup Finals 2022,Semi-finals,2022.0,5.0,13.0,3,63,An Se Young,Akane YAMAGUCHI,0.0,0.0
+16,Viktor_AXELSEN_Anthony_Sinisuka_GINTING_DAIHATSU_INDONESIA_MASTERS_2022_Semifinals,DAIHATSU INDONESIA MASTERS 2022,Semi-finals,2022.0,6.0,11.0,2,48,Viktor AXELSEN,Anthony Sinisuka GINTING,0.0,0.0
+17,CHEN_Yu_Fei_HE_Bing_Jiao_DAIHATSU_Indonesia_Masters_2022_Semifinals,DAIHATSU INDONESIA MASTERS 2022,Semi-finals,2022.0,6.0,11.0,2,51,CHEN Yufei,HE Bingjiao,0.0,0.0
+18,Wang_Zhi_Yi_He_Bing_Jiao_Indonesia_Open_2022_Semi_finals,INDONESIA OPEN 2022,Semi-finals,2022.0,6.0,18.0,2,42,WANG Zhi Yi,HE Bingjiao,0.0,0.0
+19,Viktor_AXELSEN_LEE_Zii_Jia_EAST_VENTURES_Indonesia_Open_2022_Semifinals,INDONESIA OPEN 2022,Semi-finals,2022.0,6.0,18.0,3,70,Viktor AXELSEN,LEE Zii Jia,0.0,0.0
+20,Kento_MOMOTA_Kunlavut_VITIDSARN_Malaysia_Open_2022_ Semi_finals,Malaysia Open 2022,Semi-finals,2022.0,7.0,2.0,2,42,Kento MOMOTA,Kunlavut VITIDSARN,1.0,0.0
+21,Viktor_AXELSEN_Jonatan_CHRISTIE_Malaysia_Open_2022_SemiFinals,Malaysia Open 2022,Semi-finals,2022.0,7.0,2.0,3,71,Viktor AXELSEN,Jonatan CHRISTIE,0.0,0.0
+22,Viktor_AXELSEN_Kento_MOMOTA_PETRONAS_Malaysia_Open_2022_Finals,Malaysia Open 2022,Finals,2022.0,7.0,3.0,2,34,Viktor AXELSEN,Kento MOMOTA,0.0,0.0
+23,Ratchanok_INTANON_CHEN_Yu_Fei_PETRONAS_Malaysia_Open_2022_Finals,Malaysia Open 2022,Finals,2022.0,7.0,3.0,3,65,Ratchanok INTANON,CHEN Yufei,0.0,0.0
+24,Ratchanok_INTANON_WANG_Zhi_Yi_Malaysia_Open_2022_SemiFinals,Malaysia Open 2022,Semi-finals,2022.0,7.0,2.0,2,38,Ratchanok INTANON,WANG Zhi Yi,0.0,0.0
+25,Chico_Aura_DWI_WARDOYO_LU_Guang_Zu_PERODUA_Malaysia_Masters_2022_Semifinals,Malaysia Open 2022,Semi-finals,2022.0,7.0,9.0,3,57,Chico Aura DWI WARDOYO,LU Guang Zu,1.0,0.0
+26,Chico_Aura_DWI_WARDOYO_NG_Ka_Long_Angus_Malaysia_Masters_2022_Finals,Malaysia Masters 2022,Finals,2022.0,7.0,10.0,2,45,Chico Aura DWI WARDOYO,NG Ka Long Angus,1.0,0.0
+27,An_Se_Young_Chen_Yu_Fei_PERODUA_Malaysia_Masters_2022_Finals,Malaysia Masters 2022,Finals,2022.0,7.0,10.0,2,38,An Se Young,CHEN Yufei,0.0,0.0
+28,AN_Se_Young_Gregoria_Mariska_TUNJUNG_Malaysia_Masters_2022_SemiFinals,Malaysia Masters 2022,Semi-finals,2022.0,7.0,9.0,3,57,An Se Young,Gregoria Mariska TUNJUNG,1.0,0.0
+29,EAST_VENTURES_Indonesia_Open_2022_Zhao_Jun_Peng_PRANNOY_H._S._Semifinals,INDONESIA OPEN 2022,Semi-finals,2022.0,6.0,18.0,2,40,ZHAO Jun Peng,PRANNOY H. S.,1.0,0.0
+30,Kunlavut_VITIDSARN_ZHAO_Jun_ Peng_BWF_World_Championships_2022_SemiFinals,BWF World Championships 2022,Semi-finals,2022.0,8.0,27.0,2,43,Kunlavut VITIDSARN,ZHAO Jun Peng,0.0,0.0
+31,Akane_YAMAGUCHI_AN_Se_Young_BWF_World_Championships_2022_Semi_finals,BWF World Championships 2022,Semi-finals,2022.0,8.0,27.0,2,43,Akane YAMAGUCHI,An Se Young,0.0,0.0
+32,Viktor_Axelsen_Kunlavut_Vitidsarn_BWF_World_Championships_2022_Finals,BWF World Championships 2022,Finals,2022.0,8.0,28.0,2,50,Viktor AXELSEN,Kunlavut VITIDSARN,0.0,0.0
+33,Akane_YAMAGUCHI_CHEN_Yu_Fei_BWF_World_Championships_2022_Finals,BWF World Championships 2022,Finals,2022.0,8.0,28.0,3,68,Akane YAMAGUCHI,CHEN Yufei,1.0,0.0
+34,Kenta_NISHIMOTO_Anders_ANTONSEN_Japan_Open_2022_SemiFinals,Japan Open 2022,Semi-finals,2022.0,9.0,3.0,2,69,Kenta NISHIMOTO,Anders ANTONSEN,1.0,0.0
+35,Akane_YAMAGUCHI_AN_Se_Young_DAIHATSU_YONEX_Japan_Open_2022_Finals,Japan Open 2022,Finals,2022.0,9.0,4.0,2,38,Akane YAMAGUCHI,An Se Young,1.0,0.0
+36,Akane_YAMAGUCHI_CHEN_Yu_Fei_England_Open_2022_Semi_finals,YONEX All England Open Badminton Championships 2022,Semi-finals,2022.0,3.0,19.0,2,41,Akane YAMAGUCHI,CHEN Yufei,0.0,0.0
+37,Busanan_ONGBAMRUNGPHAN_Supanida_KATETHONG_India_Open_2022_Finals,YONEX-SUNRISE India Open 2022,Finals,2022.0,1.0,16.0,3,76,Busanan ONGBAMRUNGPHAN,Supanida KATETHONG,1.0,0.0
+38,Lakshya_SEN_LEE_Zii_Jia_All_England_Open_2022_SemiFinals,YONEX All England Open Badminton Championships 2022,Semi-finals,2022.0,3.0,19.0,3,76,Lakshya SEN,LEE Zii Jia,0.0,0.0
+39,Jonatan_CHRISTIE_KIDAMBI_Srikanth_Korea_Open_Badminton_Championships_2022_SemiFinals,Korea Open Badminton Championships 2022,Semi-finals,2022.0,4.0,9.0,2,49,Jonatan CHRISTIE,KIDAMBI Srikanth,0.0,0.0
+40,Supanida_KATETHONG_PUSARLA_V._Sindhu_India_Open_2022_SemiFinals,YONEX-SUNRISE India Open 2022,Semi-finals,2022.0,1.0,15.0,3,59,Supanida KATETHONG,PUSARLA V. Sindhu,1.0,0.0
+41,Busanan_ONGBAMRUNGPHAN_Aakarshi_KASHYAP_YONEX_SUNRISE_India_Open_2022_Semifinals,YONEX-SUNRISE India Open 2022,Semi-finals,2022.0,1.0,15.0,2,52,Busanan ONGBAMRUNGPHAN,Aakarshi KASHYAP,0.0,0.0
+42,Lee_Zii_Jia_Li_Shi_Feng_GR_TOYOTA_GAZOO_RACING_Thailand_Open_2022_Finals,Thailand Open 2022,Finals,2022.0,5.0,22.0,3,70,LEE Zii Jia,LI Shi Feng,0.0,0.0
+43,LI_Shi_Feng_Kodai_NARAOKAGR_Thailand_Open_2022_Semi_finals,Thailand Open 2022,Semi-finals,2022.0,5.0,21.0,3,93,LI Shi Feng,Kodai NARAOKA,1.0,0.0
+44,SHI_Yu Qi_LEE_Zii_Jia_Denmark_Open_2022_Final,Denmark Open 2022,Finals,2022.0,10.0,23.0,3,67,SHI Yuqi,LEE Zii Jia,0.0,0.0
+45,LEE_Zii_Jia_LIEW_Daren_Thailand_Open_2022_SemiFinals_Trim,Thailand Open 2022,Semi-finals,2022.0,5.0,22.0,3,51,LEE Zii Jia,LIEW Daren,0.0,0.0
+46,Lee_Zii_Jia_Loh_Kean_Yew_Denmark_Open_2022_Semifinals,Denmark Open 2022,Semi-finals,2022.0,10.0,22.0,2,40,LEE Zii Jia,LOH Kean Yew,1.0,0.0
+47,HE_Bing_Jiao_CHEN_Yu_Fei_Denmark_Open_2022_Final,Denmark Open 2022,Finals,2022.0,10.0,23.0,3,67,HE Bingjiao,CHEN Yufei,1.0,0.0
+48,CHEN_Yu_Fei_Ratchanok_INTANON_Denmark_Open_2022_SemiFinals,Denmark Open 2022,Semi-finals,2022.0,10.0,22.0,3,59,CHEN Yufei,Ratchanok INTANON,0.0,0.0
+49,HE_Bing_Jiao_Carolina_MARIN_French_Open_2022_Final,French Open 2022,Finals,2022.0,10.0,30.0,3,76,HE Bingjiao,Carolina MARIN,0.0,0.0
+50,Viktor_AXELSEN_Rasmus_GEMKE_French_Open_2022 _Finals,French Open 2022,Finals,2022.0,10.0,30.0,2,43,Viktor AXELSEN,Rasmus GEMKE,0.0,0.0
+51,Viktor_AXELSEN_Kodai_NARAOKA_YONEX_French_Open_2022_Semifinals,French Open 2022,Semi-finals,2022.0,10.0,29.0,2,45,Viktor AXELSEN,Kodai NARAOKA,1.0,0.0
+52,SHI_Yu_Qi_Kodai_NARAOKA_Denmark_Open_2022_SemiFinals,Denmark Open 2022,Semi-finals,2022.0,10.0,22.0,3,77,SHI Yuqi,Kodai NARAOKA,1.0,0.0
+53,AN_Se_Young_Pornpawee_CHOCHUWONG_Korea_Open_Badminton_Championships_2022_Finals,Korea Open Badminton Championships 2022,Finals,2022.0,4.0,10.0,2,52,An Se Young,Pornpawee CHOCHUWONG,1.0,0.0
+54,Carolina_MARIN_Akane_YAMAGUCHI_French_Open_2022_SemiFinals,French Open 2022,Semi-finals,2022.0,10.0,29.0,2,47,Carolina MARIN,Akane YAMAGUCHI,1.0,0.0
+55,Viktor_AXELSEN_ZHAO_Jun_Peng_Indonesia_Open_2022_Final,INDONESIA OPEN 2022,Finals,2022.0,6.0,19.0,2,75,Viktor AXELSEN,ZHAO Jun Peng,0.0,0.0
+56,Rasmus_GEMKE_LEE_Cheuk_Yiu_French_Open_2022_SemiFinals,French Open 2022,Semi-finals,2022.0,10.0,29.0,2,46,Rasmus GEMKE,LEE Cheuk Yiu,0.0,0.0
+57,CHEN_Yu_Fei_PUSARLA_V._Sindhu_Thailand_Open_2022_SemiFinals,Thailand Open 2022,Semi-finals,2022.0,5.0,21.0,2,43,CHEN Yufei,PUSARLA V. Sindhu,1.0,0.0
+58,Anthony_Sinisuka_Ginting_Rasmus_Gemke_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,2021,1,15,3,66,Anthony Sinisuka GINTING,Rasmus GEMKE,0,0
