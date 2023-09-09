@@ -11,9 +11,10 @@ The high-level concepts of each project are as follows:
 5. [Movement Forecasting](https://github.com/wywyWang/CoachAI-Projects/tree/main/Movement%20Forecasting) published at *AAAI-23* proposes the first movement forecasting task, which contains not only the goal of stroke forecasting but also the movement of players, by DyMF, a novel dynamic graphs and hierarchical fusion model based on the proposed player movements (PM) graphs.
 6. [CoachAI-Challenge-IJCAI2023](https://github.com/wywyWang/CoachAI-Projects/tree/main/CoachAI-Challenge-IJCAI2023) is a badminton challenge (CC4) hosted at *IJCAI-23*. Please find the [website](https://sites.google.com/view/coachai-challenge-2023/) for more details.
 7. [ShuttleSet](https://github.com/wywyWang/CoachAI-Projects/tree/main/ShuttleSet) published at *KDD-23* is the largest badminton singles dataset with stroke-level records.
+    - An extension dataset [ShuttleSet22](https://github.com/wywyWang/CoachAI-Projects/tree/main/CoachAI-Challenge-IJCAI2023/ShuttleSet22) published at *IJCAI-23 IT4PSS Workshop* is also released.
 
 ## Publications and Contributions
-1. [Kuang-Da Wang, Wei-Yao Wang, Ping-Chun Hsieh, Wen-Chih Peng, "Generating Turn-Based Player Behavior via Experience from Demonstrations", SPIGM @ ICML 2023]()
+1. [Kuang-Da Wang, Wei-Yao Wang, Ping-Chun Hsieh, Wen-Chih Peng, "Generating Turn-Based Player Behavior via Experience from Demonstrations", SPIGM @ ICML 2023](https://openreview.net/forum?id=9cuULoi7Ex)
 2. [Kuang-Da Wang, Yu-Tse Chen, Yu-Heng Lin, Wei-Yao Wang, Wen-Chih Peng, "The CoachAI Badminton Environment: Improving Badminton Player Tactics with A Novel Reinforcement Learning Environment", DSAI4Sports @ KDD 2023]()
 3. [Wei-Yao Wang, Wei-Wei Du, Wen-Chih Peng, "ShuttleSet22: Benchmarking Stroke Forecasting with Stroke-Level Badminton Dataset", IT4PSS @ IJCAI 2023](https://arxiv.org/abs/2306.15664)
 4. [Wei-Yao Wang, Yung-Chang Huang, Tsi-Ui Ik, Wen-Chih Peng, "ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis", KDD 2023](https://arxiv.org/abs/2306.04948)
