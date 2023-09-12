@@ -1,0 +1,12 @@
+@inproceedings{DBLP:conf/aaai/WangSCP22,
+  author    = {Wei{-}Yao Wang and
+               Hong{-}Han Shuai and
+               Kai{-}Shiang Chang and
+               Wen{-}Chih Peng},
+  title     = {ShuttleNet: Position-Aware Fusion of Rally Progress and Player Styles
+               for Stroke Forecasting in Badminton},
+  booktitle = {{AAAI}},
+  pages     = {4219--4227},
+  publisher = {{AAAI} Press},
+  year      = {2022}
+}
