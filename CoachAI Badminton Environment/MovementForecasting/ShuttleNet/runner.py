@@ -1,0 +1,423 @@
+import torch
+import os
+import numpy as np
+from tqdm import tqdm
+import torch.nn.functional as F
+import torch.distributions.multivariate_normal as torchdist
+
+
+PAD = 0
+
+
+def Gaussian2D_loss(V_pred, V_trgt):
+    #mux, muy, sx, sy, corr
+    #assert V_pred.shape == V_trgt.shape
+    normx = V_trgt[:, 0] - V_pred[:, 0]
+    normy = V_trgt[:, 1] - V_pred[:, 1]
+
+    sx = torch.exp(V_pred[:, 2]) #sx
+    sy = torch.exp(V_pred[:, 3]) #sy
+    corr = torch.tanh(V_pred[:, 4]) #corr
+    
+    sxsy = sx * sy
+
+    z = (normx/sx)**2 + (normy/sy)**2 - 2*((corr*normx*normy)/sxsy)
+    negRho = 1 - corr**2
+
+    # Numerator
+    result = torch.exp(-z/(2*negRho))
+    # Normalization factor
+    denom = 2 * np.pi * (sxsy * torch.sqrt(negRho))
+
+    # Final PDF calculation
+    result = result / denom
+
+    # Numerical stability
+    epsilon = 1e-20
+
+    result = -torch.log(torch.clamp(result, min=epsilon))
+    result = torch.sum(result)
+    
+    return result
+
+def train(train_dataloader, valid_dataloader, encoder, decoder, location_criterion, shot_type_criterion, encoder_optimizer, decoder_optimizer, args, device="cpu"):
+    encode_length = args['encode_length']    
+    best_loss = 1e6
+    best_loss_location = 1e6
+    best_loss_type = 1e6
+    for epoch in tqdm(range(args['epochs'])):
+        encoder.train(), decoder.train()
+        for rally, target in train_dataloader:
+            encoder_optimizer.zero_grad()
+            decoder_optimizer.zero_grad()
+            
+            # rally information
+            player = rally[0].to(device).long()
+            shot_type = rally[1].to(device).long()
+            player_A_x = rally[2].to(device)
+            player_A_y = rally[3].to(device)
+            player_B_x = rally[4].to(device)
+            player_B_y  = rally[5].to(device)
+            
+            # target information
+            target_A_x = target[0].to(device)
+            target_A_y = target[1].to(device)
+            target_B_x = target[2].to(device)
+            target_B_y = target[3].to(device)
+            target_type = target[4].to(device)
+            
+            encoder_player = player[:, :encode_length-1]
+            padding = torch.zeros((player.size(0), 1), dtype=torch.long).to(device)
+            encoder_player = torch.cat((padding, encoder_player), dim=1)
+
+            encoder_shot_type = shot_type[:, :encode_length-1]
+            padding = torch.zeros((player.size(0), 1), dtype=torch.long).to(device)
+            encoder_shot_type = torch.cat((padding, encoder_shot_type), dim=1)
+
+            encoder_player_A_x = player_A_x[:, :encode_length]
+            encoder_player_A_y = player_A_y[:, :encode_length]
+            encoder_player_B_x = player_B_x[:, :encode_length]
+            encoder_player_B_y = player_B_y[:, :encode_length]            
+
+            encode_local_output, encode_global_A, encode_global_B = encoder(encoder_player, encoder_player_A_x, encoder_player_A_y, encoder_player_B_x, encoder_player_B_y, encoder_shot_type, two_player=player[:, 0:2])
+
+            decoder_player = player[:, encode_length-1:-1]
+            decoder_shot_type = shot_type[:, encode_length-1:-1]
+            decoder_player_A_x = player_A_x[:, encode_length:]
+            decoder_player_A_y = player_A_y[:, encode_length:]
+            decoder_player_B_x = player_B_x[:, encode_length:]
+            decoder_player_B_y = player_B_y[:, encode_length:]
+
+            predict_xy, predict_shot_type_logit = decoder(decoder_player, decoder_player_A_x, decoder_player_A_y, decoder_player_B_x, decoder_player_B_y, decoder_shot_type, encode_local_output, encode_global_A, encode_global_B, two_player=player[:, 0:2])
+
+            predict_A_xy = predict_xy[:, :, :5]
+            predict_B_xy = predict_xy[:, :, 5:]
+
+            target_A_x = target_A_x[:, encode_length:]
+            target_A_y = target_A_y[:, encode_length:]
+            target_B_x = target_B_x[:, encode_length:]
+            target_B_y = target_B_y[:, encode_length:]
+            target_type = target_type[:, encode_length-1:-1]
+            
+            pad_mask = (target_type!=PAD)
+            predict_shot_type_logit = predict_shot_type_logit[pad_mask]
+            predict_A_xy = predict_A_xy[pad_mask]
+            predict_B_xy = predict_B_xy[pad_mask]
+            target_A_x = target_A_x[pad_mask]
+            target_A_y = target_A_y[pad_mask]
+            target_B_x = target_B_x[pad_mask]
+            target_B_y = target_B_y[pad_mask]
+            target_type = target_type[pad_mask]
+
+            gold_A_xy = torch.cat((target_A_x.unsqueeze(-1), target_A_y.unsqueeze(-1)), dim=-1).to(device, dtype=torch.float)
+            gold_B_xy = torch.cat((target_B_x.unsqueeze(-1), target_B_y.unsqueeze(-1)), dim=-1).to(device, dtype=torch.float)
+
+            loss_type = shot_type_criterion(predict_shot_type_logit, target_type)
+            loss_location = (Gaussian2D_loss(predict_A_xy, gold_A_xy) + Gaussian2D_loss(predict_B_xy, gold_B_xy)) / 2
+            loss = loss_location + loss_type
+            loss.backward()
+
+            encoder_optimizer.step()
+            decoder_optimizer.step()
+
+        # evaluate_loss, loss_location, loss_type = evaluate(valid_dataloader, encoder, decoder, location_criterion, shot_type_criterion, args, device=device)
+        if loss < best_loss:
+            best_loss = loss
+            best_loss_location = loss_location
+            best_loss_type = loss_type
+    save(encoder, decoder, args)
+    return best_loss, best_loss_location, best_loss_type
+
+
+def evaluate(test_dataloader, encoder, decoder, location_MSE_criterion, location_MAE_criterion, shot_type_criterion, args, device="cpu"):
+    encode_length = args['encode_length']
+    encoder.eval(), decoder.eval()
+
+    total_instance = 0
+    total_loss = 0
+    total_loss_MSE_location = 0
+    total_loss_MAE_location = 0
+    total_loss_type = 0
+
+    with torch.no_grad():
+        for rally, target in tqdm(test_dataloader):
+            best_loss = 1e9
+            best_location_MSE_loss = 0
+            best_location_MAE_loss = 0
+            best_type_loss = 0            
+            for sample_index in range(args['sample_num']):
+                tmp_rally_location_MSE_loss = 0
+                tmp_rally_location_MAE_loss = 0
+                tmp_rally_type_loss = 0
+
+                # rally information
+                player = rally[0].to(device).long()
+                shot_type = rally[1].to(device).long()
+                player_A_x = rally[2].to(device)
+                player_A_y = rally[3].to(device)
+                player_B_x = rally[4].to(device)
+                player_B_y  = rally[5].to(device)
+                length = rally[6]
+                
+                # target information
+                target_A_x = target[0].to(device)
+                target_A_y = target[1].to(device)
+                target_B_x = target[2].to(device)
+                target_B_y = target[3].to(device)
+                target_type = target[4].to(device)
+                
+                encoder_player = player[:, :encode_length-1]
+                padding = torch.zeros((player.size(0), 1), dtype=torch.long).to(device)
+                encoder_player = torch.cat((padding, encoder_player), dim=1)
+
+                encoder_shot_type = shot_type[:, :encode_length-1]
+                padding = torch.zeros((player.size(0), 1), dtype=torch.long).to(device)
+                encoder_shot_type = torch.cat((padding, encoder_shot_type), dim=1)
+                encoder_player_A_x = player_A_x[:, :encode_length]
+                encoder_player_A_y = player_A_y[:, :encode_length]
+                encoder_player_B_x = player_B_x[:, :encode_length]
+                encoder_player_B_y = player_B_y[:, :encode_length]
+                
+                # hidden, cell = encoder(encoder_player, encoder_set, encoder_player_A_x, encoder_player_A_y, encoder_player_B_x, encoder_player_B_y, encoder_shot_type, hidden, cell)
+                encode_local_output, encode_global_A, encode_global_B = encoder(encoder_player, encoder_player_A_x, encoder_player_A_y, encoder_player_B_x, encoder_player_B_y, encoder_shot_type, two_player=player[:, 0:2])
+                
+                decoder_player_A_x = player_A_x[:, encode_length:encode_length+1]
+                decoder_player_A_y = player_A_y[:, encode_length:encode_length+1]
+                decoder_player_B_x = player_B_x[:, encode_length:encode_length+1]
+                decoder_player_B_y = player_B_y[:, encode_length:encode_length+1]
+                decoder_shot_type = shot_type[:, encode_length-1:encode_length]
+                decoder_player = player[:, encode_length-1:encode_length]
+
+                for sequence_index in range(encode_length, length[0]):
+                    # predict_xy, predict_shot_type_logit, hidden, cell = decoder(decoder_player, decoder_set, decoder_player_A_x, decoder_player_A_y, decoder_player_B_x, decoder_player_B_y, decoder_shot_type, hidden, cell)
+                    predict_xy, predict_shot_type_logit = decoder(decoder_player, decoder_player_A_x, decoder_player_A_y, decoder_player_B_x, decoder_player_B_y, decoder_shot_type, encode_local_output, encode_global_A, encode_global_B, two_player=player[:, 0:2])
+                    
+                    predict_A_xy = predict_xy[:, :, :5]
+                    predict_B_xy = predict_xy[:, :, 5:]
+
+                    sx = torch.exp(predict_A_xy[:, -1, 2]) #sx
+                    sy = torch.exp(predict_A_xy[:, -1, 3]) #sy
+                    corr = torch.tanh(predict_A_xy[:, -1, 4]) #corr                
+
+                    cov = torch.zeros(2, 2).to(player.device)
+                    cov[0, 0]= sx * sx
+                    cov[0, 1]= corr * sx * sy
+                    cov[1, 0]= corr * sx * sy
+                    cov[1, 1]= sy * sy
+                    mean = predict_A_xy[:, -1, 0:2]
+                    
+                    mvnormal = torchdist.MultivariateNormal(mean, cov)
+                    predict_A_xy = mvnormal.sample().unsqueeze(0)
+
+                    sx = torch.exp(predict_B_xy[:, -1, 2]) #sx
+                    sy = torch.exp(predict_B_xy[:, -1, 3]) #sy
+                    corr = torch.tanh(predict_B_xy[:, -1, 4]) #corr                
+
+                    cov = torch.zeros(2, 2).to(player.device)
+                    cov[0, 0]= sx * sx
+                    cov[0, 1]= corr * sx * sy
+                    cov[1, 0]= corr * sx * sy
+                    cov[1, 1]= sy * sy
+                    mean = predict_B_xy[:, -1, 0:2]
+                    
+                    mvnormal = torchdist.MultivariateNormal(mean, cov)
+                    predict_B_xy = mvnormal.sample().unsqueeze(0)
+                
+                    decoder_target_A_x = target_A_x[:, sequence_index:sequence_index+1]
+                    decoder_target_A_y = target_A_y[:, sequence_index:sequence_index+1]
+                    decoder_target_B_x = target_B_x[:, sequence_index:sequence_index+1]
+                    decoder_target_B_y = target_B_y[:, sequence_index:sequence_index+1]
+
+                    decoder_target_A_x = target_A_x[:, sequence_index:sequence_index+1]
+                    decoder_target_A_y = target_A_y[:, sequence_index:sequence_index+1]
+                    decoder_target_B_x = target_B_x[:, sequence_index:sequence_index+1]
+                    decoder_target_B_y = target_B_y[:, sequence_index:sequence_index+1]
+                                    
+                    decoder_target_type = target_type[:, sequence_index-1]
+
+                    gold_A_xy = torch.cat((decoder_target_A_x.unsqueeze(-1), decoder_target_A_y.unsqueeze(-1)), dim=-1).to(device, dtype=torch.float)
+                    gold_B_xy = torch.cat((decoder_target_B_x.unsqueeze(-1), decoder_target_B_y.unsqueeze(-1)), dim=-1).to(device, dtype=torch.float)
+                    
+                    loss_MSE_A = location_MSE_criterion(predict_A_xy, gold_A_xy)
+                    loss_MSE_B = location_MSE_criterion(predict_B_xy, gold_B_xy)
+                    loss_MAE_A = location_MAE_criterion(predict_A_xy, gold_A_xy)
+                    loss_MAE_B = location_MAE_criterion(predict_B_xy, gold_B_xy)
+
+                    loss_MSE_location = loss_MSE_A + loss_MSE_B
+                    loss_MAE_location = loss_MAE_A + loss_MAE_B
+
+                    loss_type = shot_type_criterion(predict_shot_type_logit[:, -1, :], decoder_target_type)
+                    if sample_index == 0:
+                        total_instance += 1
+
+                    tmp_rally_location_MSE_loss += loss_MSE_location.item()
+                    tmp_rally_location_MAE_loss += loss_MAE_location.item()
+                    tmp_rally_type_loss += loss_type.item()
+
+                    decoder_player = torch.cat((decoder_player, player[:, sequence_index:sequence_index+1]), dim=-1)
+                    decoder_player_A_x = torch.cat((decoder_player_A_x, predict_A_xy[:, -1, 0:1]), dim=-1)
+                    decoder_player_A_y = torch.cat((decoder_player_A_y, predict_A_xy[:, -1, 1:2]), dim=-1)
+                    decoder_player_B_x = torch.cat((decoder_player_B_x, predict_B_xy[:, -1, 0:1]), dim=-1)
+                    decoder_player_B_y = torch.cat((decoder_player_B_y, predict_B_xy[:, -1, 1:2]), dim=-1)
+
+                    weights = predict_shot_type_logit[0, -1, 1:]
+                    weights = F.softmax(weights, dim=0)
+                    # decoder_shot_type = torch.multinomial(weights, 1).unsqueeze(0) + 1
+                    decoder_shot_type = torch.cat((decoder_shot_type, torch.multinomial(weights, 1).unsqueeze(0) + 1), dim=-1)
+
+                if (tmp_rally_location_MSE_loss + tmp_rally_location_MAE_loss + tmp_rally_type_loss) < best_loss:
+                    best_location_MSE_loss = tmp_rally_location_MSE_loss
+                    best_location_MAE_loss = tmp_rally_location_MAE_loss
+                    best_type_loss = tmp_rally_type_loss
+                    best_loss = tmp_rally_location_MSE_loss + tmp_rally_location_MAE_loss + tmp_rally_type_loss
+
+            total_loss_MSE_location += best_location_MSE_loss
+            total_loss_MAE_location += best_location_MAE_loss
+            total_loss_type += best_type_loss
+            total_loss += best_loss
+            
+    total_loss = round(total_loss / total_instance, 4)
+    total_loss_type = round(total_loss_type / total_instance, 4)
+    total_loss_MSE_location = round(total_loss_MSE_location / total_instance, 4)
+    total_loss_MAE_location = round(total_loss_MAE_location / total_instance, 4)
+
+    return total_loss, total_loss_MSE_location, total_loss_MAE_location, total_loss_type
+
+def predict(all_dataloader, encoder, decoder, args, device="cpu"):
+    encode_length = args['encode_length']
+    encoder.eval(), decoder.eval()
+
+    all_player_A_x_record = []
+    all_player_A_y_record = []
+    all_player_B_x_record = []
+    all_player_B_y_record = []
+    all_shot_type_record = []
+
+    all_mean_A = []
+    all_mean_B = []
+    all_cov_A = []
+    all_cov_B = []
+    
+    mean_x, std_x = 175., 82.
+    mean_y, std_y = 467., 192.
+
+    with torch.no_grad():
+        for rally, _ in tqdm(all_dataloader):
+            
+            player_A_x_record = []
+            player_A_y_record = []
+            player_B_x_record = []
+            player_B_y_record = []
+            shot_type_record = []
+
+            # rally information
+            player = rally[0].to(device).long()
+            shot_type = rally[1].to(device).long()
+            player_A_x = rally[2].to(device)
+            player_A_y = rally[3].to(device)
+            player_B_x = rally[4].to(device)
+            player_B_y  = rally[5].to(device)
+            
+            encoder_player = player[:, :encode_length-1]
+            padding = torch.zeros((player.size(0), 1), dtype=torch.long).to(device)
+            encoder_player = torch.cat((padding, encoder_player), dim=1)
+
+            encoder_shot_type = shot_type[:, :encode_length-1]
+            padding = torch.zeros((player.size(0), 1), dtype=torch.long).to(device)
+            encoder_shot_type = torch.cat((padding, encoder_shot_type), dim=1)
+            encoder_player_A_x = player_A_x[:, :encode_length]
+            encoder_player_A_y = player_A_y[:, :encode_length]
+            encoder_player_B_x = player_B_x[:, :encode_length]
+            encoder_player_B_y = player_B_y[:, :encode_length]
+
+            for i in range(encoder_player_A_x.size(1)):
+                player_A_x_record.append(encoder_player_A_x[0][i].item() * std_x + mean_x)
+                player_A_y_record.append(960 - (encoder_player_A_y[0][i].item() * std_y + mean_y))
+                player_B_x_record.append(encoder_player_B_x[0][i].item() * std_x + mean_x)
+                player_B_y_record.append(960 - (encoder_player_B_y[0][i].item() * std_y + mean_y))
+            for i in range(1, encoder_shot_type.size(1)):
+                shot_type_record.append(encoder_shot_type[0][i].item())
+            
+            # hidden, cell = encoder(encoder_player, encoder_set, encoder_player_A_x, encoder_player_A_y, encoder_player_B_x, encoder_player_B_y, encoder_shot_type, hidden, cell)
+            encode_local_output, encode_global_A, encode_global_B = encoder(encoder_player, encoder_player_A_x, encoder_player_A_y, encoder_player_B_x, encoder_player_B_y, encoder_shot_type, two_player=player[:, 0:2])
+            
+            decoder_player_A_x = player_A_x[:, encode_length:encode_length+1]
+            decoder_player_A_y = player_A_y[:, encode_length:encode_length+1]
+            decoder_player_B_x = player_B_x[:, encode_length:encode_length+1]
+            decoder_player_B_y = player_B_y[:, encode_length:encode_length+1]
+            decoder_shot_type = shot_type[:, encode_length-1:encode_length]
+            decoder_player = player[:, encode_length-1:encode_length]
+
+            for sequence_index in range(encode_length, encode_length+1):
+                # predict_xy, predict_shot_type_logit, hidden, cell = decoder(decoder_player, decoder_set, decoder_player_A_x, decoder_player_A_y, decoder_player_B_x, decoder_player_B_y, decoder_shot_type, hidden, cell)
+                predict_xy, predict_shot_type_logit = decoder(decoder_player, decoder_player_A_x, decoder_player_A_y, decoder_player_B_x, decoder_player_B_y, decoder_shot_type, encode_local_output, encode_global_A, encode_global_B, two_player=player[:, 0:2])
+                
+                predict_A_xy = predict_xy[:, :, :5]
+                predict_B_xy = predict_xy[:, :, 5:]
+
+                sx = torch.exp(predict_A_xy[:, -1, 2]) #sx
+                sy = torch.exp(predict_A_xy[:, -1, 3]) #sy
+                corr = torch.tanh(predict_A_xy[:, -1, 4]) #corr                
+
+                cov = torch.zeros(2, 2).to(player.device)
+                cov[0, 0]= sx * sx
+                cov[0, 1]= corr * sx * sy
+                cov[1, 0]= corr * sx * sy
+                cov[1, 1]= sy * sy
+                mean = predict_A_xy[:, -1, 0:2]
+                
+                mean_A = mean.cpu().detach().numpy()
+                mean_A[0][0] = mean_A[0][0] * std_x + mean_x 
+                mean_A[0][1] = 960 - (mean_A[0][1] * std_y + mean_y )
+                cov_A = cov.cpu().detach().numpy()
+                cov_A = cov_A * std_x * std_y
+
+                all_mean_A.append(mean_A)            
+                all_cov_A.append(cov_A)
+
+                sx = torch.exp(predict_B_xy[:, -1, 2]) #sx
+                sy = torch.exp(predict_B_xy[:, -1, 3]) #sy
+                corr = torch.tanh(predict_B_xy[:, -1, 4]) #corr                
+
+                cov = torch.zeros(2, 2).to(player.device)
+                cov[0, 0]= sx * sx
+                cov[0, 1]= corr * sx * sy
+                cov[1, 0]= corr * sx * sy
+                cov[1, 1]= sy * sy
+                mean = predict_B_xy[:, -1, 0:2]
+                
+                mean_B = mean.cpu().detach().numpy()
+                mean_B[0][0] = mean_B[0][0] * std_x + mean_x 
+                mean_B[0][1] = 960 - (mean_B[0][1] * std_y + mean_y )
+                cov_B = cov.cpu().detach().numpy()
+                cov_B = cov_B * std_x * std_y
+
+                all_mean_B.append(mean_B)
+                all_cov_B.append(cov_B)
+
+                decoder_player = torch.cat((decoder_player, player[:, sequence_index:sequence_index+1]), dim=-1)
+                decoder_player_A_x = torch.cat((decoder_player_A_x, predict_A_xy[:, -1, 0:1]), dim=-1)
+                decoder_player_A_y = torch.cat((decoder_player_A_y, predict_A_xy[:, -1, 1:2]), dim=-1)
+                decoder_player_B_x = torch.cat((decoder_player_B_x, predict_B_xy[:, -1, 0:1]), dim=-1)
+                decoder_player_B_y = torch.cat((decoder_player_B_y, predict_B_xy[:, -1, 1:2]), dim=-1)
+
+                weights = predict_shot_type_logit[0, -1, 1:]
+                weights = F.softmax(weights, dim=0).cpu().detach().numpy()
+                shot_type_record.append(weights)
+
+            all_player_A_x_record.append(player_A_x_record)
+            all_player_A_y_record.append(player_A_y_record)
+            all_player_B_x_record.append(player_B_x_record)
+            all_player_B_y_record.append(player_B_y_record)
+            all_shot_type_record.append(shot_type_record)
+
+    return all_player_A_x_record, all_player_A_y_record, all_player_B_x_record, all_player_B_y_record, all_shot_type_record, all_mean_A, all_mean_B, all_cov_A, all_cov_B
+
+
+def save(encoder, decoder, args):
+    output_folder_name = args['model_folder']
+    if not os.path.exists(output_folder_name):
+        os.makedirs(output_folder_name)
+    
+    torch.save(encoder.state_dict(), output_folder_name + '/encoder')
+    torch.save(decoder.state_dict(), output_folder_name + '/decoder')
